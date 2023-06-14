@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <stdio.h>
 #include <curl/curl.h>
 
 class WebDownloader

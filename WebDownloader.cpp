@@ -1,4 +1,11 @@
+#define _CRT_SECURE_NO_DEPRECATE
 #include "WebDownloader.h"
+
+size_t WebDownloader::write_data(void* ptr, size_t size, size_t nmemb, FILE* stream)
+{
+	size_t written = fwrite(ptr, size, nmemb, stream);
+	return written;
+}
 
 bool WebDownloader::DownloadFile(std::string url, std::string file)
 {
@@ -22,10 +29,4 @@ bool WebDownloader::DownloadFile(std::string url, std::string file)
 		return true;
 	}
 	return false;
-}
-
-size_t WebDownloader::write_data(void* ptr, size_t size, size_t nmemb, FILE* stream)
-{
-	size_t written = fwrite(ptr, size, nmemb, stream);
-	return written;
 }

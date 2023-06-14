@@ -130,19 +130,23 @@
   <ItemGroup>
     <ClCompile Include="ConsoleUtils.cpp" />
     <ClCompile Include="MainSettings.cpp" />
+    <ClCompile Include="ProcessManager.cpp" />
     <ClCompile Include="RconSettings.cpp" />
     <ClCompile Include="RustServerConsoleCpp.cpp" />
     <ClCompile Include="ServerObject.cpp" />
     <ClCompile Include="ServerSettings.cpp" />
+    <ClCompile Include="SteamCMD.cpp" />
     <ClCompile Include="UnzipFile.cpp" />
     <ClCompile Include="WebDownloader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsoleUtils.h" />
     <ClInclude Include="MainSettings.h" />
+    <ClInclude Include="ProcessManager.h" />
     <ClInclude Include="RconSettings.h" />
     <ClInclude Include="ServerObject.h" />
     <ClInclude Include="ServerSettings.h" />
+    <ClInclude Include="SteamCMD.h" />
     <ClInclude Include="UnzipFile.h" />
     <ClInclude Include="WebDownloader.h" />
   </ItemGroup>

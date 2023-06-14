@@ -46,19 +46,19 @@ ServerObject ServerObject::CreateNewServer()
 	ServerSettings server;
 	RconSettings rcon;
 	
-	server.Identity = ConsoleUtils::PromptString("Server Identity", 1);
-	server.Port = ConsoleUtils::PromptInt("Server Port", true);
-	server.HostName = ConsoleUtils::PromptString("Server Hostname", 3);
-	server.Description = ConsoleUtils::PromptString("Server Description", 0);
-	server.MaxPlayers = ConsoleUtils::PromptInt("Server Max Players", true);
-	server.WorldSize = ConsoleUtils::PromptIntRange("Server World Size (3000 - 6000)", 3000, 6000);
-	if (ConsoleUtils::PromptYN("Generate random seed? y/n"))
+	server.Identity = ConsoleUtils::PromptString("Server Identity", 1, true);
+	server.Port = ConsoleUtils::PromptInt("Server Port", true, true);
+	server.HostName = ConsoleUtils::PromptString("Server Hostname", 3, true);
+	server.Description = ConsoleUtils::PromptString("Server Description", 0, true);
+	server.MaxPlayers = ConsoleUtils::PromptInt("Server Max Players", true, true);
+	server.WorldSize = ConsoleUtils::PromptIntRange("Server World Size (3000 - 6000)", 3000, 6000, true);
+	if (ConsoleUtils::PromptYN("Generate random seed? y/n", true))
 	{
 		server.Seed = rand() % 1000000 + 1;
 	}
 	else
 	{
-		server.Seed = ConsoleUtils::PromptInt("Server Seed", true);
+		server.Seed = ConsoleUtils::PromptInt("Server Seed", true, true);
 	}
 
 	ConsoleUtils::Clear();
@@ -69,9 +69,9 @@ ServerObject ServerObject::CreateNewServer()
 	std::cout << "Rcon Settings:" << std::endl;
 	std::this_thread::sleep_for(std::chrono::seconds(1));
 
-	rcon.Port = ConsoleUtils::PromptInt("Rcon Port", true);
-	rcon.Web1 = ConsoleUtils::PromptYN("Rcon Web1? y/n");
-	rcon.Password = ConsoleUtils::PromptString("Rcon Password", 0);
+	rcon.Port = ConsoleUtils::PromptInt("Rcon Port", true, true);
+	rcon.Web1 = ConsoleUtils::PromptYN("Rcon Web1? y/n", true);
+	rcon.Password = ConsoleUtils::PromptString("Rcon Password", 0, true);
 
 	ConsoleUtils::Clear();
 	std::cout << "Rcon Settings Complete" << std::endl;

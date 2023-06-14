@@ -1,6 +1,6 @@
 #include "ConsoleUtils.h"
 
-std::string ConsoleUtils::PromptString(std::string prompt, int minLen = 1, bool clearConsole = true)
+std::string ConsoleUtils::PromptString(std::string prompt, int minLen, bool clearConsole)
 {
 	std::string val;
 	if (clearConsole)
@@ -12,7 +12,7 @@ std::string ConsoleUtils::PromptString(std::string prompt, int minLen = 1, bool 
 	return val;
 }
 
-int ConsoleUtils::PromptInt(std::string prompt, bool notNegative = false, bool clearConsole = true)
+int ConsoleUtils::PromptInt(std::string prompt, bool notNegative, bool clearConsole)
 {
 	int val;
 	while (true)
@@ -37,7 +37,7 @@ int ConsoleUtils::PromptInt(std::string prompt, bool notNegative = false, bool c
 	}
 }
 
-int ConsoleUtils::PromptIntRange(std::string prompt, int min, int max, bool clearConsole = true)
+int ConsoleUtils::PromptIntRange(std::string prompt, int min, int max, bool clearConsole)
 {
 	int val;
 	while (true)
@@ -55,7 +55,7 @@ int ConsoleUtils::PromptIntRange(std::string prompt, int min, int max, bool clea
 	}
 }
 
-bool ConsoleUtils::PromptYN(std::string prompt, bool clearConsole = true)
+bool ConsoleUtils::PromptYN(std::string prompt, bool clearConsole)
 {
 	std::string val;
 	while (true)
@@ -77,7 +77,7 @@ bool ConsoleUtils::PromptYN(std::string prompt, bool clearConsole = true)
 	}
 }
 
-int ConsoleUtils::CreateMenu(std::string title, std::vector<std::string> options, bool clearConsole = true)
+int ConsoleUtils::CreateMenu(std::string title, std::vector<std::string> options, bool clearConsole)
 {
 	int maxInt = options.size();
 	int selectedInt;

@@ -7,11 +7,8 @@
 class MainSettings
 {
 public:
-	std::string RustDedicatedPath = "";
-	std::string SteamCMDPath = "";
-	bool AutoOxide = false;
+	bool Installed = false;
 	bool AutoRestart = false;
-	bool ManuallyInstalled = false;
 
 	MainSettings();
 	void SaveSettings();

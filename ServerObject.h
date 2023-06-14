@@ -19,6 +19,7 @@ public:
 	std::string LogFile = "gameLog.txt";
 	bool SilentCrashes = false;
 
+	ServerObject() { }
 	ServerObject(nlohmann::json& j);
 	ServerObject(ServerSettings server, RconSettings rcon);
 	void SaveSettings(nlohmann::json& j);
